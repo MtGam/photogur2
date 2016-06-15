@@ -1,1 +1,6 @@
 <h1>Doll Fotos</h1>
+
+<% @dollfotos.each do |dollfoto| %>
+  <p><%= dollfoto.title %>, <%= dollfoto.artist %></p>
+  <img src="<%= dollfoto.url %>">
+<% end %>

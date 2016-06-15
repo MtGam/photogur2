@@ -1,0 +1,2 @@
+class DollfotosController < ApplicationController
+end

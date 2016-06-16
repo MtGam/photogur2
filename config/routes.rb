@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   get 'dollfotos/:id' => 'dollfotos#show', as: 'dollfoto'
 
   delete 'dollfotos/:id' => 'dollfotos#destroy', as: "delete_dollfoto"
-
+  resources :pictures
 end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

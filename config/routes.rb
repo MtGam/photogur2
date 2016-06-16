@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root 'dollfotos#index'
   get 'dollfotos' => 'dollfotos#index'
 
   post 'dollfotos' => 'dollfotos#create'

@@ -35,6 +35,13 @@ class DollfotosController < ApplicationController
     end
   end
 
+  def destroy
+    @dollfoto = Dollfoto.find(params[:id])
+    @dollfoto.destroy
+    redirect_to dollfotos_url
+  end
+
+
 
   private
   def dollfoto_params

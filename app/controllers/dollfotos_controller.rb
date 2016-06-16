@@ -21,6 +21,21 @@ class DollfotosController < ApplicationController
     end
   end
 
+  def edit
+    @dollfoto = Dollfoto.find(params[:id])
+  end
+
+  def update
+    @dollfoto = Dollfoto.find(params[:id])
+
+    if @dollfoto.update_attributes(dollfoto_params)
+      redirect_to "/dollfotos/#{@dollfoto.id}"
+    else
+      render :edit
+    end
+  end
+
+
   private
   def dollfoto_params
     params.require(:dollfoto).permit(:artist, :title, :url)

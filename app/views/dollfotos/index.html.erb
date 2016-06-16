@@ -1,4 +1,5 @@
-<h1>Doll Fotos</h1>
+<h1>Doll Fotos (<%= @dollfotos.length %>)</h1>
+<%= link_to "New Doll Photo", "/dollfotos/new" %>
 
 <% @dollfotos.each do |dollfoto| %>
   <p><%= dollfoto.title %>, <%= dollfoto.artist %></p>

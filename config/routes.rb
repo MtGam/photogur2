@@ -5,6 +5,9 @@ Rails.application.routes.draw do
   post 'dollfotos' => 'dollfotos#create'
   get 'dollfotos/new' => 'dollfotos#new'
 
+  get 'dollfotos/:id/edit' => "dollfotos#edit", as: "edit_dollfoto"
+  patch 'dollfotos/:id' => "dollfotos#update"
+
   get 'dollfotos/:id' => 'dollfotos#show', as: 'dollfoto'
 
 end

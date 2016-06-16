@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
   get 'dollfotos' => 'dollfotos#index'
+
+  post 'dollfotos' => 'dollfotos#create'
+  get 'dollfotos/new' => 'dollfotos#new'
+
   get 'dollfotos/:id' => 'dollfotos#show', as: 'dollfoto'
 
 end

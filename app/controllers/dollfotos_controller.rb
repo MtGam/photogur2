@@ -9,10 +9,22 @@ class DollfotosController < ApplicationController
   end
 
   def new
+    @dollfoto = Dollfoto.new
   end
 
   def create
-    render text: "Saving a picture. URL: #{params[:url]}, Title: #{params[:title]}, Artist: #{params[:artist]}"
+    @dollfoto = Dollfoto.new(dollfoto_params)
+    if @dollfoto.save
+      redirect_to dollfotos_url
+    else
+      render :new
+    end
   end
+
+  private
+  def dollfoto_params
+    params.require(:dollfoto).permit(:artist, :title, :url)
+  end
+
 
 end
